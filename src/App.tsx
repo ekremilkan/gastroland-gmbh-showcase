@@ -1,9 +1,17 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
+import ProductCategoryPage from "./pages/ProductCategoryPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
+import ImpressumPage from "./pages/ImpressumPage";
+import FAQPage from "./pages/FAQPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -14,11 +22,21 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="flex flex-col min-h-screen">
+          <NavBar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products/:categoryId" element={<ProductCategoryPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+              <Route path="/impressum" element={<ImpressumPage />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
