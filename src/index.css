@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 200 33% 98%;
-    --foreground: 215 35% 15%;
+    --background: 43 100% 96%;
+    --foreground: 20 14% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 15%;
+    --card-foreground: 20 14% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 15%;
+    --popover-foreground: 20 14% 20%;
 
-    --primary: 215 50% 23%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 20 90% 50%;
+    --primary-foreground: 60 30% 96%;
 
-    --secondary: 199 37% 76%;
-    --secondary-foreground: 215 35% 15%;
+    --secondary: 43 100% 96%;
+    --secondary-foreground: 20 14% 20%;
 
-    --muted: 199 37% 94%;
-    --muted-foreground: 215 35% 45%;
+    --muted: 43 50% 94%;
+    --muted-foreground: 20 14% 45%;
 
-    --accent: 199 37% 76%;
-    --accent-foreground: 215 35% 15%;
+    --accent: 20 90% 50%;
+    --accent-foreground: 60 30% 96%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 60 30% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 215 50% 23%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 90% 50%;
 
     --radius: 0.75rem;
   }
@@ -53,14 +53,14 @@
   }
   
   .hero-gradient {
-    @apply bg-gradient-to-r from-gastro-deep-blue via-gastro-dark-blue to-gastro-blue;
+    @apply bg-gradient-to-r from-amber-800 via-amber-700 to-amber-600;
   }
   
   .btn-primary {
-    @apply bg-gastro-dark-blue hover:bg-gastro-deep-blue text-white px-6 py-3 rounded-lg transition-colors duration-300;
+    @apply bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-colors duration-300;
   }
   
   .btn-outline {
-    @apply border-2 border-gastro-dark-blue text-gastro-dark-blue hover:bg-gastro-dark-blue hover:text-white px-6 py-3 rounded-lg transition-colors duration-300;
+    @apply border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-6 py-3 rounded-lg transition-colors duration-300;
   }
 }

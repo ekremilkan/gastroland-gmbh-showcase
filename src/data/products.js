@@ -1,16 +1,39 @@
-
 export const productCategories = [
   {
     id: 1,
-    name: "Et Ürünleri",
+    name: "Fleischprodukte",
     image: "/placeholder.svg",
-    description: "Yüksek kaliteli et ürünleri çeşitleri",
-    certifications: ["Helal", "ISO 22000"],
+    description: "Hochwertige Fleischprodukte für professionelle Küchen, direkt von ausgewählten Lieferanten.",
+    certifications: ["Halal", "ISO 22000"],
     products: [
-      { id: 101, name: "Dana Bonfile", image: "/placeholder.svg", description: "Özenle seçilmiş birinci sınıf dana bonfile." },
-      { id: 102, name: "Kuzu Pirzola", image: "/placeholder.svg", description: "Özel çiftliklerden tedarik edilen taze kuzu pirzola." },
-      { id: 103, name: "Tavuk Göğsü", image: "/placeholder.svg", description: "Doğal yemlerle beslenen tavuklardan elde edilen göğüs eti." },
-      { id: 104, name: "Hindi Fileto", image: "/placeholder.svg", description: "Özel kesim hindi filetosu." },
+      { 
+        id: 101, 
+        name: "Rinderfilet", 
+        image: "/placeholder.svg", 
+        description: "Sorgfältig ausgewähltes erstklassiges Rinderfilet.", 
+        detailedDescription: "Unser Premium-Rinderfilet wird von ausgewählten Bauernhöfen bezogen, wo die Tiere unter optimalen Bedingungen gehalten werden. Das Fleisch zeichnet sich durch seine hervorragende Marmorierung, Zartheit und sein reiches Aroma aus. Ideal für Steaks, Carpaccio oder Rindermedaillons. Vakuumverpackt und bei optimaler Temperatur geliefert."
+      },
+      { 
+        id: 102, 
+        name: "Lammkoteletts", 
+        image: "/placeholder.svg", 
+        description: "Von speziellen Bauernhöfen bezogene frische Lammkoteletts.", 
+        detailedDescription: "Diese saftigen Lammkoteletts stammen von jungen Lämmern, die auf saftigen Weiden aufgezogen wurden. Das Fleisch zeichnet sich durch einen milden Geschmack und eine zarte Textur aus. Perfekt zum Grillen oder Braten mit Kräutern der Provence. Jedes Stück ist handverlesen und garantiert höchste Qualität."
+      },
+      { 
+        id: 103, 
+        name: "Hähnchenbrust", 
+        image: "/placeholder.svg", 
+        description: "Aus natürlich gefütterten Hühnern gewonnene Brustfilets.", 
+        detailedDescription: "Unsere Hähnchenbrustfilets stammen von Hühnern, die mit natürlichem Futter ohne Antibiotika aufgezogen wurden. Das Fleisch ist mager, proteinreich und vielseitig in der Zubereitung. Jedes Filet ist gleichmäßig geschnitten und garantiert konstante Garzeit. Ideal für Grillgerichte, Geschnetzeltes oder gefüllte Hähnchenbrust."
+      },
+      { 
+        id: 104, 
+        name: "Putenfilet", 
+        image: "/placeholder.svg", 
+        description: "Speziell geschnittenes Putenfilet.", 
+        detailedDescription: "Unser mageres Putenfilet wird von ausgewählten Bauernhöfen bezogen, wo die Tiere unter stressfreien Bedingungen aufwachsen. Das Fleisch ist besonders mager und proteinreich, ideal für gesundheitsbewusste Gerichte. Vielseitig einsetzbar von Schnitzel bis Rouladen oder als Basis für Aufschnitt."
+      },
       { id: 105, name: "Piliç But", image: "/placeholder.svg", description: "Özel yetiştirilen pilicin but kısmı." },
       { id: 106, name: "Dana Kıyma", image: "/placeholder.svg", description: "Yağ oranı düşük, protein değeri yüksek özel kıyma." },
       { id: 107, name: "Kuzu Kol", image: "/placeholder.svg", description: "Özel seçim kuzu kol eti." },
@@ -21,13 +44,25 @@ export const productCategories = [
   },
   {
     id: 2,
-    name: "Süt Ürünleri",
+    name: "Milchprodukte",
     image: "/placeholder.svg",
-    description: "Taze ve doğal süt ürünleri",
+    description: "Frische und natürliche Milchprodukte von ausgewählten Molkereien aus der Region.",
     certifications: ["ISO 9001", "HACCP"],
     products: [
-      { id: 201, name: "Tam Yağlı Süt", image: "/placeholder.svg", description: "Doğal çiftliklerden tedarik edilen taze süt." },
-      { id: 202, name: "Kaşar Peyniri", image: "/placeholder.svg", description: "Olgunlaştırılmış özel kaşar peyniri." },
+      { 
+        id: 201, 
+        name: "Vollmilch", 
+        image: "/placeholder.svg", 
+        description: "Von natürlichen Bauernhöfen bezogene frische Milch.", 
+        detailedDescription: "Unsere Vollmilch wird täglich frisch von regionalen Bauernhöfen geliefert. Die Kühe grasen auf saftigen Weiden und werden artgerecht gehalten, was zu einer besonders cremigen und geschmackvollen Milch führt. Erhältlich in verschiedenen Packungsgrößen für Gastronomie-Bedürfnisse, von 1-Liter-Packungen bis zu 10-Liter-Gebinden."
+      },
+      { 
+        id: 202, 
+        name: "Käse", 
+        image: "/placeholder.svg", 
+        description: "Gereifter Spezialkäse.", 
+        detailedDescription: "Unser Sortiment an gereiftem Käse umfasst Spezialitäten aus verschiedenen Regionen Europas. Von mildem Gouda bis hin zu charaktervollem Blauschimmelkäse bieten wir eine Auswahl, die jede Käseplatte bereichert. Alle Sorten werden unter optimalen Bedingungen gereift und gelagert, um das volle Aroma zu entwickeln."
+      },
       { id: 203, name: "Beyaz Peynir", image: "/placeholder.svg", description: "Geleneksel yöntemlerle üretilen beyaz peynir." },
       { id: 204, name: "Yoğurt", image: "/placeholder.svg", description: "Doğal mayalı yoğurt." },
       { id: 205, name: "Tereyağı", image: "/placeholder.svg", description: "El yapımı tereyağı." },
