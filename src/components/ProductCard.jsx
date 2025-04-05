@@ -12,13 +12,13 @@ const ProductCard = ({ category }) => {
         />
       </div>
       <div className="p-4">
-        <h3 className="font-bold text-lg text-amber-700 mb-2">{category.name}</h3>
+        <h3 className="font-bold text-lg text-gastro-navy mb-2">{category.name}</h3>
         <p className="text-gray-600 mb-4 text-sm line-clamp-2">{category.description}</p>
         <div className="flex flex-wrap mb-4">
           {category.certifications.map((cert, index) => (
             <span 
               key={index}
-              className="inline-block bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full mr-2 mb-2"
+              className="inline-block bg-gastro-yellow/30 text-gastro-navy text-xs px-2 py-1 rounded-full mr-2 mb-2"
             >
               {cert}
             </span>
@@ -26,7 +26,7 @@ const ProductCard = ({ category }) => {
         </div>
         <Link 
           to={`/products/${category.id}`}
-          className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-colors duration-300 inline-block w-full text-center"
+          className="bg-gradient-to-r from-gastro-orange to-gastro-yellow hover:from-gastro-yellow hover:to-gastro-orange text-gastro-navy font-medium px-6 py-3 rounded-lg transition-all duration-300 inline-block w-full text-center"
         >
           Details
         </Link>

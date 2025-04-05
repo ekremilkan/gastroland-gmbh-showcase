@@ -54,11 +54,12 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				gastro: {
-					'red': '#E63946',
-					'light': '#F1FAEE',
-					'blue': '#A8DADC',
-					'dark-blue': '#457B9D',
-					'deep-blue': '#1D3557',
+					'navy': '#0C2340',
+					'orange': '#F77F00',
+					'yellow': '#FCBF49',
+					'light-yellow': '#FEF9EF',
+					'gradient-start': '#F77F00',
+					'gradient-end': '#FCBF49',
 				}
 			},
 			borderRadius: {

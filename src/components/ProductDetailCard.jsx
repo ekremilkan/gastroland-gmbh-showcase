@@ -21,13 +21,13 @@ const ProductDetailCard = ({ product }) => {
           />
         </div>
         <div className="p-4">
-          <h3 className="font-bold text-lg mb-2 text-amber-700">{product.name}</h3>
+          <h3 className="font-bold text-lg mb-2 text-gastro-navy">{product.name}</h3>
           <p className="text-gray-600 mb-2 text-sm">{product.description}</p>
           
           <div className="mt-4 pt-4 border-t border-gray-100">
             <div className="flex justify-between items-center">
               <button 
-                className="text-amber-700 font-medium hover:text-amber-900 transition-colors"
+                className="text-gastro-orange font-medium hover:text-gastro-navy transition-colors"
                 onClick={() => setShowDetails(true)}
               >
                 Details
@@ -41,9 +41,16 @@ const ProductDetailCard = ({ product }) => {
       </div>
 
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-white">
           <DialogHeader>
-            <DialogTitle className="text-amber-700">{product.name}</DialogTitle>
+            <DialogTitle className="text-gastro-navy flex items-center">
+              <img 
+                src="/lovable-uploads/2c78969d-6267-4cfd-8009-989dfa27f7fa.png" 
+                alt="Logo" 
+                className="h-8 mr-2"
+              />
+              {product.name}
+            </DialogTitle>
           </DialogHeader>
           <div className="grid gap-4">
             <div className="aspect-w-16 aspect-h-9 overflow-hidden rounded-md">
@@ -56,8 +63,8 @@ const ProductDetailCard = ({ product }) => {
             <DialogDescription className="text-gray-700">
               <p className="mb-4">{product.detailedDescription || product.description}</p>
               
-              <div className="mt-4 bg-amber-50 p-4 rounded-md">
-                <h4 className="font-medium text-amber-800 mb-2">Produktinformationen</h4>
+              <div className="mt-4 bg-gastro-light-yellow p-4 rounded-md">
+                <h4 className="font-medium text-gastro-navy mb-2">Produktinformationen</h4>
                 <ul className="space-y-1 text-sm">
                   <li><span className="font-medium">Herkunft:</span> Premium-Auswahl</li>
                   <li><span className="font-medium">Qualität:</span> Erstklassig</li>

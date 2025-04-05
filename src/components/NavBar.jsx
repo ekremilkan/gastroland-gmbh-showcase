@@ -23,37 +23,42 @@ const NavBar = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-gastro-deep-blue">Main Gastroland GmbH</span>
+            <img 
+              src="/lovable-uploads/2c78969d-6267-4cfd-8009-989dfa27f7fa.png" 
+              alt="Main Gastroland GmbH Logo" 
+              className="h-12 mr-3"
+            />
+            <span className="text-2xl font-bold text-gastro-navy hidden md:block">Main Gastroland GmbH</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gastro-dark-blue hover:text-gastro-red transition-colors">
-              Ana Sayfa
+            <Link to="/" className="text-gastro-navy hover:text-gastro-orange transition-colors">
+              Startseite
             </Link>
             <div className="relative group">
-              <button className="text-gastro-dark-blue hover:text-gastro-red transition-colors cursor-pointer">
-                Ürünlerimiz
+              <button className="text-gastro-navy hover:text-gastro-orange transition-colors cursor-pointer">
+                Produkte
               </button>
               <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="py-2">
-                  <Link to="/#products" className="block px-4 py-2 text-sm text-gastro-dark-blue hover:bg-gastro-blue hover:text-white">
-                    Tüm Ürünler
+                  <Link to="/#products" className="block px-4 py-2 text-sm text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy">
+                    Alle Produkte
                   </Link>
-                  <Link to="/products/1" className="block px-4 py-2 text-sm text-gastro-dark-blue hover:bg-gastro-blue hover:text-white">
-                    Et Ürünleri
+                  <Link to="/products/1" className="block px-4 py-2 text-sm text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy">
+                    Fleischprodukte
                   </Link>
-                  <Link to="/products/2" className="block px-4 py-2 text-sm text-gastro-dark-blue hover:bg-gastro-blue hover:text-white">
-                    Süt Ürünleri
+                  <Link to="/products/2" className="block px-4 py-2 text-sm text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy">
+                    Milchprodukte
                   </Link>
-                  <Link to="/products/3" className="block px-4 py-2 text-sm text-gastro-dark-blue hover:bg-gastro-blue hover:text-white">
-                    Unlu Mamüller
+                  <Link to="/products/3" className="block px-4 py-2 text-sm text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy">
+                    Backwaren
                   </Link>
                 </div>
               </div>
             </div>
-            <Link to="/faq" className="text-gastro-dark-blue hover:text-gastro-red transition-colors">
-              SSS
+            <Link to="/faq" className="text-gastro-navy hover:text-gastro-orange transition-colors">
+              FAQ
             </Link>
           </div>
 
@@ -62,14 +67,14 @@ const NavBar = () => {
             <form onSubmit={handleSearchSubmit} className="flex items-center">
               <input
                 type="text"
-                placeholder="Ürün ara..."
-                className="border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gastro-blue"
+                placeholder="Produkt suchen..."
+                className="border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gastro-yellow"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button
                 type="submit"
-                className="bg-gastro-dark-blue text-white px-4 py-2 rounded-r-md hover:bg-gastro-deep-blue transition-colors"
+                className="bg-gastro-navy text-white px-4 py-2 rounded-r-md hover:bg-opacity-90 transition-colors"
               >
                 <Search size={20} />
               </button>
@@ -78,7 +83,7 @@ const NavBar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gastro-dark-blue"
+            className="md:hidden text-gastro-navy"
             onClick={toggleMenu}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -92,14 +97,14 @@ const NavBar = () => {
               <div className="flex items-center">
                 <input
                   type="text"
-                  placeholder="Ürün ara..."
-                  className="border border-gray-300 rounded-l-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gastro-blue"
+                  placeholder="Produkt suchen..."
+                  className="border border-gray-300 rounded-l-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gastro-yellow"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <button
                   type="submit"
-                  className="bg-gastro-dark-blue text-white px-4 py-2 rounded-r-md hover:bg-gastro-deep-blue transition-colors"
+                  className="bg-gastro-navy text-white px-4 py-2 rounded-r-md hover:bg-opacity-90 transition-colors"
                 >
                   <Search size={20} />
                 </button>
@@ -107,38 +112,38 @@ const NavBar = () => {
             </form>
             <Link
               to="/"
-              className="block px-4 py-2 text-gastro-dark-blue hover:bg-gastro-blue hover:text-white"
+              className="block px-4 py-2 text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy"
               onClick={toggleMenu}
             >
-              Ana Sayfa
+              Startseite
             </Link>
             <Link
               to="/#products"
-              className="block px-4 py-2 text-gastro-dark-blue hover:bg-gastro-blue hover:text-white"
+              className="block px-4 py-2 text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy"
               onClick={toggleMenu}
             >
-              Ürünlerimiz
+              Produkte
             </Link>
             <Link
               to="/products/1"
-              className="block px-4 py-2 ml-4 text-sm text-gastro-dark-blue hover:bg-gastro-blue hover:text-white"
+              className="block px-4 py-2 ml-4 text-sm text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy"
               onClick={toggleMenu}
             >
-              Et Ürünleri
+              Fleischprodukte
             </Link>
             <Link
               to="/products/2"
-              className="block px-4 py-2 ml-4 text-sm text-gastro-dark-blue hover:bg-gastro-blue hover:text-white"
+              className="block px-4 py-2 ml-4 text-sm text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy"
               onClick={toggleMenu}
             >
-              Süt Ürünleri
+              Milchprodukte
             </Link>
             <Link
               to="/faq"
-              className="block px-4 py-2 text-gastro-dark-blue hover:bg-gastro-blue hover:text-white"
+              className="block px-4 py-2 text-gastro-navy hover:bg-gastro-yellow hover:text-gastro-navy"
               onClick={toggleMenu}
             >
-              SSS
+              FAQ
             </Link>
           </div>
         )}

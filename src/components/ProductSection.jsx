@@ -20,11 +20,18 @@ const ProductSection = ({ initialQuery = '' }) => {
   };
 
   return (
-    <section id="products" className="py-16 bg-amber-50">
+    <section id="products" className="py-16 bg-gastro-light-yellow">
       <div className="container-custom mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-amber-900">
-          Unsere Produkte
-        </h2>
+        <div className="flex items-center justify-center mb-8">
+          <img 
+            src="/lovable-uploads/2c78969d-6267-4cfd-8009-989dfa27f7fa.png" 
+            alt="Main Gastroland GmbH Logo" 
+            className="h-12 mr-3"
+          />
+          <h2 className="text-3xl md:text-4xl font-bold text-gastro-navy">
+            Unsere Produkte
+          </h2>
+        </div>
         <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
           Ihr professioneller Partner für Großhandelslebensmittelversorgung. Unser breites Produktsortiment bietet die besten Zutaten für Ihre Restaurants.
         </p>
@@ -35,13 +42,13 @@ const ProductSection = ({ initialQuery = '' }) => {
             <input
               type="text"
               placeholder="Produktkategorie oder Produktname suchen..."
-              className="flex-grow border border-gray-300 rounded-l-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              className="flex-grow border border-gray-300 rounded-l-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gastro-yellow"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button
               type="submit"
-              className="bg-amber-600 text-white px-6 py-3 rounded-r-lg hover:bg-amber-700 transition-colors"
+              className="bg-gastro-navy text-white px-6 py-3 rounded-r-lg hover:bg-opacity-90 transition-colors"
             >
               <Search size={20} />
             </button>
@@ -59,7 +66,7 @@ const ProductSection = ({ initialQuery = '' }) => {
           <div className="text-center py-12">
             <p className="text-xl text-gray-600">Kein Produkt gefunden.</p>
             <button 
-              className="mt-4 text-amber-700 hover:text-amber-900 font-medium"
+              className="mt-4 text-gastro-orange hover:text-gastro-navy font-medium"
               onClick={() => setSearchQuery('')}
             >
               Alle Produkte anzeigen

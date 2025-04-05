@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 43 100% 96%;
-    --foreground: 20 14% 20%;
+    --background: 48 100% 97%;
+    --foreground: 210 64% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 20 14% 20%;
+    --card-foreground: 210 64% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14% 20%;
+    --popover-foreground: 210 64% 20%;
 
-    --primary: 20 90% 50%;
-    --primary-foreground: 60 30% 96%;
+    --primary: 36 100% 50%;
+    --primary-foreground: 210 64% 20%;
 
-    --secondary: 43 100% 96%;
-    --secondary-foreground: 20 14% 20%;
+    --secondary: 48 100% 97%;
+    --secondary-foreground: 210 64% 20%;
 
-    --muted: 43 50% 94%;
-    --muted-foreground: 20 14% 45%;
+    --muted: 48 50% 94%;
+    --muted-foreground: 210 64% 45%;
 
-    --accent: 20 90% 50%;
-    --accent-foreground: 60 30% 96%;
+    --accent: 36 100% 50%;
+    --accent-foreground: 210 64% 20%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 30% 96%;
+    --destructive-foreground: 48 100% 97%;
 
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --ring: 20 90% 50%;
+    --border: 36 5.9% 90%;
+    --input: 36 5.9% 90%;
+    --ring: 36 100% 50%;
 
     --radius: 0.75rem;
   }
@@ -53,14 +53,14 @@
   }
   
   .hero-gradient {
-    @apply bg-gradient-to-r from-amber-800 via-amber-700 to-amber-600;
+    @apply bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400;
   }
   
   .btn-primary {
-    @apply bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-colors duration-300;
+    @apply bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition-colors duration-300;
   }
   
   .btn-outline {
-    @apply border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-6 py-3 rounded-lg transition-colors duration-300;
+    @apply border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg transition-colors duration-300;
   }
 }
