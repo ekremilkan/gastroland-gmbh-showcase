@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
-import ProductSection from '../components/ProductSection';
-import { findAllProductCategories } from '../data/products';
+import ProductSearchSection from '../components/ProductSearchSection';
+import ProductGrid from '../components/ProductGrid';
 
 const HomePage = () => {
   const location = useLocation();
@@ -14,109 +14,101 @@ const HomePage = () => {
     const params = new URLSearchParams(location.search);
     const query = params.get('search') || '';
     setSearchQuery(query);
-    
-    // Scroll to products section if there's a search query
-    if (query) {
-      const productsSection = document.getElementById('products');
-      if (productsSection) {
-        setTimeout(() => {
-          productsSection.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    }
   }, [location.search]);
 
   return (
     <div>
       <Hero />
-      <ProductSection initialQuery={searchQuery} />
+      {/* Search bar moved up to be immediately visible */}
+      <ProductSearchSection initialQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <ProductGrid searchQuery={searchQuery} />
       
       {/* Features Section */}
       <section className="py-16 bg-white">
         <div className="container-custom mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gastro-deep-blue">
-            Neden Bizi Tercih Etmelisiniz?
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gastro-navy">
+            Warum Uns Wählen?
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gastro-light p-6 rounded-lg shadow-sm text-center">
-              <div className="w-16 h-16 bg-gastro-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gastro-dark-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-gastro-light-yellow p-6 rounded-lg shadow-sm text-center">
+              <div className="w-16 h-16 bg-gastro-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gastro-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gastro-deep-blue">Kalite Garantisi</h3>
-              <p className="text-gray-600">En yüksek kalite standartlarına uygun, özenle seçilmiş ürünler sunuyoruz.</p>
+              <h3 className="text-xl font-bold mb-2 text-gastro-navy">Qualitätsgarantie</h3>
+              <p className="text-gray-600">Wir bieten sorgfältig ausgewählte Produkte, die den höchsten Qualitätsstandards entsprechen.</p>
             </div>
             
-            <div className="bg-gastro-light p-6 rounded-lg shadow-sm text-center">
-              <div className="w-16 h-16 bg-gastro-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gastro-dark-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-gastro-light-yellow p-6 rounded-lg shadow-sm text-center">
+              <div className="w-16 h-16 bg-gastro-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gastro-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gastro-deep-blue">Hızlı Teslimat</h3>
-              <p className="text-gray-600">Zamanında ve güvenilir teslimat hizmetimizle işletmenizin aksamadan çalışmasını sağlıyoruz.</p>
+              <h3 className="text-xl font-bold mb-2 text-gastro-navy">Schnelle Lieferung</h3>
+              <p className="text-gray-600">Unser pünktlicher und zuverlässiger Lieferservice sorgt dafür, dass Ihr Betrieb ohne Unterbrechungen läuft.</p>
             </div>
             
-            <div className="bg-gastro-light p-6 rounded-lg shadow-sm text-center">
-              <div className="w-16 h-16 bg-gastro-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gastro-dark-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="bg-gastro-light-yellow p-6 rounded-lg shadow-sm text-center">
+              <div className="w-16 h-16 bg-gastro-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gastro-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gastro-deep-blue">Geniş Ürün Yelpazesi</h3>
-              <p className="text-gray-600">Tek bir tedarikçiden tüm ihtiyaçlarınızı karşılayabileceğiniz kapsamlı bir ürün çeşitliliği.</p>
+              <h3 className="text-xl font-bold mb-2 text-gastro-navy">Große Produktauswahl</h3>
+              <p className="text-gray-600">Umfassendes Produktsortiment, mit dem Sie alle Ihre Bedürfnisse bei einem einzigen Lieferanten erfüllen können.</p>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Testimonials */}
-      <section className="py-16 bg-gastro-dark-blue text-white">
+      {/* Testimonials - Fixed colors for better visibility */}
+      <section className="py-16 bg-gastro-navy text-white">
         <div className="container-custom mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Müşterilerimiz Ne Diyor?
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+            Was Unsere Kunden Sagen
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white/10 p-6 rounded-lg">
+            <div className="bg-white/20 p-6 rounded-lg">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gastro-blue rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gastro-orange rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-bold">AB</span>
                 </div>
                 <div>
-                  <h4 className="font-bold">Ali Bey</h4>
-                  <p className="text-sm opacity-80">Restaurant Anadolu</p>
+                  <h4 className="font-bold text-white">Ali Bey</h4>
+                  <p className="text-sm text-white/80">Restaurant Anadolu</p>
                 </div>
               </div>
-              <p className="italic">"Yıllardır Main Gastroland ile çalışıyoruz ve bizi hiç hayal kırıklığına uğratmadılar. Ürünlerin kalitesi ve teslimat hızı işletmemiz için çok değerli."</p>
+              <p className="italic text-white">"Wir arbeiten seit Jahren mit Main Gastroland und sie haben uns nie enttäuscht. Die Qualität der Produkte und die schnelle Lieferung sind für unseren Betrieb sehr wertvoll."</p>
             </div>
             
-            <div className="bg-white/10 p-6 rounded-lg">
+            <div className="bg-white/20 p-6 rounded-lg">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gastro-blue rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gastro-orange rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-bold">MH</span>
                 </div>
                 <div>
-                  <h4 className="font-bold">Mehmet Hanım</h4>
-                  <p className="text-sm opacity-80">Cafe Istanbul</p>
+                  <h4 className="font-bold text-white">Mehmet Hanım</h4>
+                  <p className="text-sm text-white/80">Cafe Istanbul</p>
                 </div>
               </div>
-              <p className="italic">"Küçük kafemiz için aradığımız tüm malzemeleri tek bir yerden temin edebilmek büyük kolaylık. Main Gastroland ekibi her zaman yardımcı ve profesyonel."</p>
+              <p className="italic text-white">"Für unser kleines Café alle Materialien an einem Ort zu finden, ist eine große Erleichterung. Das Team von Main Gastroland ist immer hilfsbereit und professionell."</p>
             </div>
             
-            <div className="bg-white/10 p-6 rounded-lg">
+            <div className="bg-white/20 p-6 rounded-lg">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gastro-blue rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gastro-orange rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-bold">SK</span>
                 </div>
                 <div>
-                  <h4 className="font-bold">Stefan Kunze</h4>
-                  <p className="text-sm opacity-80">Mediterran Kitchen</p>
+                  <h4 className="font-bold text-white">Stefan Kunze</h4>
+                  <p className="text-sm text-white/80">Mediterran Kitchen</p>
                 </div>
               </div>
-              <p className="italic">"Kaliteli Türk ve Akdeniz ürünleri için güvenilir bir tedarikçi bulmak zor olabilir, ancak Main Gastroland ihtiyacımız olan her şeyi sunuyor. Kesinlikle tavsiye ederim."</p>
+              <p className="italic text-white">"Es kann schwierig sein, einen zuverlässigen Lieferanten für hochwertige türkische und mediterrane Produkte zu finden, aber Main Gastroland bietet alles, was wir brauchen. Absolut empfehlenswert."</p>
             </div>
           </div>
         </div>
